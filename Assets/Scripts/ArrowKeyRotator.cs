@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ArrowKeyRotator : MonoBehaviour
 {
-    public float rotateSpeed = 10f; 
-    public GameObject childObject;  
-    public Transform playerTransform; 
+    public float rotateSpeed = 10f;
+    public GameObject childObject;
+    public Transform playerTransform;
 
     private Quaternion targetRotation;
     private bool rotatePlayerToTarget = false;
@@ -55,7 +55,7 @@ public class ArrowKeyRotator : MonoBehaviour
         // rotate hologram
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
 
-        // Smoothly rotate player if flag is set (this rotates the player transform)
+        // rotates the player
         if (rotatePlayerToTarget && playerTransform != null)
         {
             playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
